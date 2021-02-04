@@ -21,8 +21,7 @@ public class AutoBus extends Vehiculo{
 
 	
 	public void recargarTag(Double montoAAgregar) {
-	 Double nuevoSaldo = montoAAgregar;
-	 tag.setSaldo(nuevoSaldo);
+	 tag.setSaldo(montoAAgregar);
 	}
 
 

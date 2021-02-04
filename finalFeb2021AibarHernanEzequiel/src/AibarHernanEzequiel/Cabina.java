@@ -23,7 +23,7 @@ public class Cabina {
 	private Double tarifaCoche;
 	private Double tarifaMoto;
 	private Double tarifaAutoBus;
-
+	private Integer contador;
 
 	/* recaudacion total de todos los vehiculos que pasaron por dicha cabina*/
 	private Double recaudacion;
@@ -35,6 +35,7 @@ public class Cabina {
 		this.tarifaCoche=100.0;
 		this.tarifaMoto=50.0;
 		this.contadorDeVehiculos = new HashMap<String, Integer>();
+		 contador = 0;
 	
 		//Completar la inicializacion de los atributos restantes
 		
@@ -42,6 +43,31 @@ public class Cabina {
 
 	
 	
+
+
+
+	@Override
+	public String toString() {
+		return "Cabina [recaudacion=" + recaudacion + "]";
+	}
+
+
+
+
+
+
+	public Double getRecaudacion() {
+		return recaudacion;
+	}
+
+
+
+	public void setRecaudacion(Double recaudacion) {
+		this.recaudacion = recaudacion;
+	}
+
+
+
 	/*
 	 * Este metodo realiza el cobro y acumula la recaudacion de la cabina en funcion al tipo de auto
 	 * Tambien contabiliza la cantidad de vehiculo ejemplo si es moto aumenta en uno el contador de moto
@@ -106,7 +132,7 @@ public class Cabina {
 	 * incrementa el contadorDeVehiculo 
 	 */
 	private  void  contarVehiculo (Vehiculo vehiculo) {
-		this.contadorDeVehiculos.put(vehiculo.getTipo(), ++numero);
+		this.contadorDeVehiculos.put(vehiculo.getTipo(), ++contador);
 	}
 
 
@@ -115,4 +141,7 @@ public class Cabina {
 		return numero;
 	}
 	
+	public Integer getContadorDeVehiculo() {
+		return this.contador;
+	}
 }

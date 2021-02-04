@@ -40,8 +40,8 @@ public class TelepaseTest {
 		Tag tag = new Tag(2);
 		AutoBus nuevo = new AutoBus("1001",tag);
 		Telepase tele = new Telepase(1);
-		tele.cargarTag(tag);
-		nuevo.recargarTag(300.0);
+		nuevo.recargarTag(100.0);
+		System.out.println(tag.getSaldo());
 		tele.pagarAutomatico(nuevo);
 		}catch(TagNoEncontradoException e) {
 			e.printStackTrace();
